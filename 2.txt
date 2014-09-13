@@ -1,0 +1,3 @@
+table:SOFTCONFIG
+pDriverName = "KIC1";
+pLogo = 
