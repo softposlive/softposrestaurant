@@ -29,7 +29,7 @@ import program.BillControl;
 import program.BillNoBean;
 import program.CreditPaymentRec;
 import program.POSHWSetup;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PublicVar;
 import program.ThaiUtil;

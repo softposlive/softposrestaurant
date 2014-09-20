@@ -13,7 +13,7 @@ import java.util.Locale;
 import util.DateChooseDialog;
 import database.MySQLConnect;
 import java.sql.Statement;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PluRec;
 import soft.virtual.KeyBoardDialog;

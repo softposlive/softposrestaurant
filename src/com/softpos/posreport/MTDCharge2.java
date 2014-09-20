@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.Locale;
 import database.MySQLConnect;
 import java.sql.Statement;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PluRec;
 import soft.virtual.KeyBoardDialog;

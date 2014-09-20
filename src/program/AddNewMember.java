@@ -46,11 +46,6 @@ public class AddNewMember extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToolBar1 = new javax.swing.JToolBar();
-        bntCancel = new javax.swing.JButton();
-        bntSave = new javax.swing.JButton();
-        bntDisplay = new javax.swing.JButton();
-        bntExit = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -79,6 +74,10 @@ public class AddNewMember extends javax.swing.JDialog {
         M_Barcode = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         M_NewEnd = new javax.swing.JLabel();
+        bntCancel = new javax.swing.JButton();
+        bntSave = new javax.swing.JButton();
+        bntDisplay = new javax.swing.JButton();
+        bntExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -91,100 +90,27 @@ public class AddNewMember extends javax.swing.JDialog {
         setTitle("ปรับรุงรายการข้อมูลสมาชิก");
         setFont(new java.awt.Font("Norasi", 0, 14)); // NOI18N
 
-        jToolBar1.setFont(new java.awt.Font("Norasi", 1, 14)); // NOI18N
-
-        bntCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bntCancel.setText("  ยกเลิก  ");
-        bntCancel.setFocusable(false);
-        bntCancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bntCancel.setIconTextGap(0);
-        bntCancel.setPreferredSize(new java.awt.Dimension(80, 70));
-        bntCancel.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        bntCancel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                bntCancelMouseReleased(evt);
-            }
-        });
-        bntCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntCancelActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(bntCancel);
-
-        bntSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bntSave.setText("บันทึกข้อมูล");
-        bntSave.setFocusable(false);
-        bntSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bntSave.setIconTextGap(0);
-        bntSave.setPreferredSize(new java.awt.Dimension(80, 70));
-        bntSave.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        bntSave.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                bntSaveMouseReleased(evt);
-            }
-        });
-        bntSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntSaveActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(bntSave);
-
-        bntDisplay.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bntDisplay.setText("แสดงรายการ");
-        bntDisplay.setFocusable(false);
-        bntDisplay.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bntDisplay.setIconTextGap(0);
-        bntDisplay.setPreferredSize(new java.awt.Dimension(90, 70));
-        bntDisplay.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        bntDisplay.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                bntDisplayMouseReleased(evt);
-            }
-        });
-        bntDisplay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntDisplayActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(bntDisplay);
-
-        bntExit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bntExit.setText("ออก(Exit)");
-        bntExit.setFocusable(false);
-        bntExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bntExit.setIconTextGap(0);
-        bntExit.setPreferredSize(new java.awt.Dimension(80, 70));
-        bntExit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        bntExit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                bntExitMouseReleased(evt);
-            }
-        });
-        jToolBar1.add(bntExit);
-
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("รหัสสมาชิก");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("ชื่อสมาชิก");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("วันเกิดสมาชิก");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("โทรศัพท์บ้าน");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("โทรศััพท์ที่ทำงาน");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("โทรศัพท์มือถือ");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("หมายเหตุ");
 
         M_Code.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -245,10 +171,10 @@ public class AddNewMember extends javax.swing.JDialog {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel12.setText("วันที่สมัคร");
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("วันหมดอายุ");
 
         M_Brithday.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
@@ -324,12 +250,12 @@ public class AddNewMember extends javax.swing.JDialog {
             }
         });
 
-        ProcessStr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ProcessStr.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ProcessStr.setForeground(new java.awt.Color(228, 16, 37));
         ProcessStr.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         ProcessStr.setText("jLabel8");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("Barcode");
 
         M_Barcode.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -370,7 +296,7 @@ public class AddNewMember extends javax.swing.JDialog {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(cmdDateChoose2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                                 .addComponent(jLabel13)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(M_End, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -402,7 +328,7 @@ public class AddNewMember extends javax.swing.JDialog {
                     .addComponent(jLabel1)
                     .addComponent(M_Code, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(M_Barcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(M_Barcode, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -425,9 +351,9 @@ public class AddNewMember extends javax.swing.JDialog {
                             .addComponent(M_Begin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmdDateChoose2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(M_HomeTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(M_HomeTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
@@ -457,23 +383,89 @@ public class AddNewMember extends javax.swing.JDialog {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(M_NewEnd, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(M_NewEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(M_NewEnd)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
+        bntCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bntCancel.setText("  ยกเลิก  ");
+        bntCancel.setFocusable(false);
+        bntCancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bntCancel.setIconTextGap(0);
+        bntCancel.setPreferredSize(new java.awt.Dimension(80, 70));
+        bntCancel.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bntCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                bntCancelMouseReleased(evt);
+            }
+        });
+        bntCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntCancelActionPerformed(evt);
+            }
+        });
+
+        bntSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bntSave.setText("บันทึกข้อมูล");
+        bntSave.setFocusable(false);
+        bntSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bntSave.setIconTextGap(0);
+        bntSave.setPreferredSize(new java.awt.Dimension(80, 70));
+        bntSave.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bntSave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                bntSaveMouseReleased(evt);
+            }
+        });
+        bntSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntSaveActionPerformed(evt);
+            }
+        });
+
+        bntDisplay.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bntDisplay.setText("แสดงรายการ");
+        bntDisplay.setFocusable(false);
+        bntDisplay.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bntDisplay.setIconTextGap(0);
+        bntDisplay.setPreferredSize(new java.awt.Dimension(90, 70));
+        bntDisplay.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bntDisplay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                bntDisplayMouseReleased(evt);
+            }
+        });
+        bntDisplay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntDisplayActionPerformed(evt);
+            }
+        });
+
+        bntExit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bntExit.setText("ออก(Exit)");
+        bntExit.setFocusable(false);
+        bntExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bntExit.setIconTextGap(0);
+        bntExit.setPreferredSize(new java.awt.Dimension(80, 70));
+        bntExit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bntExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                bntExitMouseReleased(evt);
+            }
+        });
+
         jMenu1.setText("Function");
-        jMenu1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenu1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
-        jMenuItem1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jMenuItem1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem1.setText("ยกเลิกการแก้ไข (Cancel Edit)");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -483,7 +475,7 @@ public class AddNewMember extends javax.swing.JDialog {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem2.setText("บันทึกข้อมูล (Save/Update)");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -493,7 +485,7 @@ public class AddNewMember extends javax.swing.JDialog {
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jMenuItem3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem3.setText("ลบข้อมูล (Delete/Remove)");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -504,7 +496,7 @@ public class AddNewMember extends javax.swing.JDialog {
         jMenu1.add(jSeparator1);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jMenuItem4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem4.setText("ออกจากการทำงาน (Exit)");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -521,19 +513,27 @@ public class AddNewMember extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(22, 22, 22))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bntCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bntSave, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bntDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bntExit, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(bntCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                        .addComponent(bntSave, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(bntExit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                        .addComponent(bntDisplay, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -541,7 +541,7 @@ public class AddNewMember extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(576, 561));
+        setSize(new java.awt.Dimension(549, 523));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1119,6 +1119,5 @@ public void ProcessEndDate() {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

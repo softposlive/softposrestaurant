@@ -14,7 +14,7 @@ import util.DateChooseDialog;
 import database.MySQLConnect;
 import java.sql.Statement;
 import program.POSHWSetup;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PublicVar;
 import program.Value;

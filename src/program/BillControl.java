@@ -1,5 +1,6 @@
 package program;
 
+import printReport.PPrint;
 import database.MySQLConnect;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -443,8 +444,7 @@ public class BillControl {
             billNo.setB_Product(B_Product);
 
             billNo.setB_Service(B_Service);
-            billNo.setB_ServiceAmt(billBean.getB_ServiceAmt());
-            billNo.setB_NetTotal(billBean.getB_NetTotal());
+            billNo.setB_ServiceAmt(billBean.getB_ServiceAmt());            
             billNo.setB_NetVat(B_Total);
             billNo.setB_MemBegin(new Date());
             billNo.setB_MemEnd(new Date());
@@ -460,7 +460,7 @@ public class BillControl {
             billNo.setB_Cashier(tableFile.getCashier());
             billNo.setB_Cust(tableFile.getTCustomer());
             billNo.setB_ETD("E");
-            billNo.setB_Cash(cashPay);
+            billNo.setB_Cash(cashPay-B_Ton);
             billNo.setB_Total(B_Total);
             billNo.setB_MemCode(tableFile.getMemCode());
 
@@ -473,12 +473,14 @@ public class BillControl {
                 //set table billno
                 billNo.setB_Vat(totalSum * posConfig.getP_Vat() / (100 + posConfig.getP_Vat()));
                 billNo.setB_CrAmt1(creditPay);
+                billNo.setB_NetTotal(billBean.getB_NetTotal());
             } else if (new CompanyConfig().excludeVat()) {
                 totalSum = tableFile.getTAmount() + billNo.getB_ServiceAmt();
                 billNo.setB_NetVat(totalSum);
                 //set table billno
                 billNo.setB_Vat(totalSum * posConfig.getP_Vat() / 100);
                 billNo.setB_CrAmt1(creditPay);
+                //billNo.setB_NetTotal(billBean.getB_NetTotal()+billNo.getB_Vat());
             }
 
             // set default cashier test 

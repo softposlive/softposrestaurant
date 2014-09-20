@@ -1,5 +1,6 @@
 package program;
 
+import printReport.PPrint;
 import database.MySQLConnect;
 import java.awt.Color;
 import java.awt.Rectangle;

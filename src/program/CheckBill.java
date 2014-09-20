@@ -1,5 +1,6 @@
 package program;
 
+import printReport.PPrint;
 import com.softpos.discount.DiscountBean;
 import com.softpos.discount.DiscountDialog;
 import com.softpos.member.MemberBean;
@@ -1174,26 +1175,28 @@ public class CheckBill extends javax.swing.JDialog {
     }//GEN-LAST:event_btn50ActionPerformed
 
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
-        if(txtCreditNo.hasFocus()){
-            txtCreditTrackNo.setFocusable(true);
-            txtCreditTrackNo.requestFocus();
-        }else if(txtCreditTrackNo.hasFocus()){
-            trackNoExist();
-        }else if(txtArCode.hasFocus()){
-            arCodeExits();
-        }else{
-            if (!PublicVar.SubTotalOK) {
-                new Thread(new Runnable() {
 
-                    @Override
-                    public void run() {
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                if (txtCreditNo.hasFocus()) {
+                    txtCreditTrackNo.setFocusable(true);
+                    txtCreditTrackNo.requestFocus();
+                } else if (txtCreditTrackNo.hasFocus()) {
+                    trackNoExist();
+                } else if (txtArCode.hasFocus()) {
+                    arCodeExits();
+                } else {
+                    if (!PublicVar.SubTotalOK) {
                         checkBillPayment();
+                    } else {
+                        dispose();
                     }
-                }).start();                
-            } else {
-                dispose();
+                }
             }
-        }
+        }).start();
+
     }//GEN-LAST:event_btnAcceptActionPerformed
 
     private void btnARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnARActionPerformed
@@ -1206,8 +1209,8 @@ public class CheckBill extends javax.swing.JDialog {
 
         if (dd.getDiscountBean() != null) {
             discBean = dd.getDiscountBean();
-            txtDiscountAmount.setText("" + discBean.getTotalDiscount());            
-            loadTableBill();            
+            txtDiscountAmount.setText("" + discBean.getTotalDiscount());
+            loadTableBill();
         }
     }//GEN-LAST:event_btnDiscountAllActionPerformed
 
@@ -1243,7 +1246,7 @@ public class CheckBill extends javax.swing.JDialog {
             txtGiftVoucherAmount.setText("" + giftDialog.getTotalAmount());
             txtGiftVoucherAmount.selectAll();
             txtGiftVoucherAmount.requestFocus();
-        }else{
+        } else {
             txtGiftVoucherAmount.setFocusable(true);
             txtGiftVoucherAmount.selectAll();
             txtGiftVoucherAmount.requestFocus();
@@ -1263,7 +1266,7 @@ public class CheckBill extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCreditActionPerformed
 
     private void btnCredit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCredit1ActionPerformed
-        txtArCode.setFocusable(true);        
+        txtArCode.setFocusable(true);
         txtArCode.requestFocus();
     }//GEN-LAST:event_btnCredit1ActionPerformed
 
@@ -1319,7 +1322,7 @@ public class CheckBill extends javax.swing.JDialog {
     }//GEN-LAST:event_txtGiftVoucherAmountKeyPressed
 
     private void txtArAmountKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtArAmountKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnAcceptActionPerformed(null);
         }
     }//GEN-LAST:event_txtArAmountKeyPressed
@@ -1329,7 +1332,7 @@ public class CheckBill extends javax.swing.JDialog {
     }//GEN-LAST:event_btnMemberActionPerformed
 
     private void btnAcceptKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnAcceptKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnAcceptActionPerformed(null);
         }
     }//GEN-LAST:event_btnAcceptKeyPressed
@@ -1551,7 +1554,7 @@ public class CheckBill extends javax.swing.JDialog {
         ArrayList<BalanceBean> listBean = bc.getAllBalance(tableNo);
         for (int i = 0; i < listBean.size(); i++) {
             BalanceBean bean = (BalanceBean) listBean.get(i);
-            if(!bean.getR_Void().equals("V")){
+            if (!bean.getR_Void().equals("V")) {
                 model.addRow(new Object[]{
                     bean.getR_PluCode(), bean.getR_PName(),
                     dec.format(bean.getR_Quan()), dec.format(bean.getR_Price()), dec.format(bean.getR_Total())
@@ -1588,10 +1591,10 @@ public class CheckBill extends javax.swing.JDialog {
     private void checkBillPayment() {
         double netTotal;
         double tmpNetTotal;
-        
+
         //temp
         double totalAmount = tBean.getTAmount();
-        
+
         double totalDiscount = Double.parseDouble(txtDiscountAmount.getText());
         double totalItemDisc = Double.parseDouble(txtItemDisc.getText());
         double totalService;
@@ -1604,7 +1607,7 @@ public class CheckBill extends javax.swing.JDialog {
         } else {
             totalService = 0;
         }
-        
+
         netTotal = tBean.getNetTotal();
 
         tmpNetTotal = netTotal;
@@ -1636,9 +1639,9 @@ public class CheckBill extends javax.swing.JDialog {
                 txtTotalAmount.setText(dec.format(ton));
 
                 BillNoBean billBean = new BillNoBean();
-                
+
                 billBean.setB_Ton(ton);
-                
+
                 // for AR
                 billBean.setB_AccrCode(txtArCode.getText());
                 billBean.setB_AccrAmt(saveAR);
@@ -1689,16 +1692,16 @@ public class CheckBill extends javax.swing.JDialog {
 
                 PublicVar.SubTotalOK = true;
                 lockScreen(this, false);
-            } else if (saveCredit == netTotal || saveAR == netTotal || (saveCredit+returnCash)==netTotal) {
+            } else if (saveCredit == netTotal || saveAR == netTotal || (saveCredit + returnCash) == netTotal) {
                 Digital_Msg.setText("เงินทอน");
                 double ton = 0;
                 txtTotalAmount.setForeground(Color.RED);
                 txtTotalAmount.setText(dec.format(ton));
                 BillNoBean billBean = new BillNoBean();
-                
+
                 // set ton
                 billBean.setB_Ton(ton);
-                
+
                 // for AR
                 billBean.setB_AccrCode(txtArCode.getText());
                 billBean.setB_AccrAmt(saveAR);
@@ -1748,14 +1751,14 @@ public class CheckBill extends javax.swing.JDialog {
 
                 PublicVar.SubTotalOK = true;
                 Value.MemberAlready = false;
-                
+
                 lockScreen(this, false);
-            }else{
+            } else {
                 // กรณีใส่จำนวนเงินไม่ครบ
                 double total = netTotal - returnCash;
                 txtTotalAmount.setText(dec.format(total));
             }
-            
+
             btnAccept.setEnabled(true);
             btnAccept.setFocusable(true);
             btnAccept.requestFocus();
@@ -1763,10 +1766,10 @@ public class CheckBill extends javax.swing.JDialog {
     }
 
     private void printBillCheck() {
-        if(Value.useprint){
+        if (Value.useprint) {
             PPrint print = new PPrint();
             print.PrintCheckBill(tableNo);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "ระบบไม่ได้กำหนดให้ใช้งานเครื่องพิมพ์ !!!");
         }
     }
@@ -1777,13 +1780,13 @@ public class CheckBill extends javax.swing.JDialog {
             component.setEnabled(b);
             component.setFocusable(false);
             if (component instanceof Container) {
-                lockScreen((Container)component, b);
+                lockScreen((Container) component, b);
             }
         }
-        
+
         btnAccept.setEnabled(true);
         btnExit.setEnabled(true);
-        
+
         btnExit.requestFocus();
     }
 

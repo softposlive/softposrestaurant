@@ -16,7 +16,7 @@ import program.CreditRec;
 import program.FinalcialRec;
 import program.HourlyRec;
 import program.POSHWSetup;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PluRec;
 import program.PublicVar;

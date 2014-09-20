@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import program.CreditRec;
 import program.FinalcialRec;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PublicVar;
 

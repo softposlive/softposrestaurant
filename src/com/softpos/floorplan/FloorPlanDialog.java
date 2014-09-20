@@ -34,13 +34,14 @@ import program.BalanceBean;
 import program.BalanceControl;
 import program.CheckProductNotEnough;
 import program.CheckStockNow;
+import program.CopyBill;
 import program.DisplayEJ;
 import program.EmployLogin;
 import program.GetPassword;
 import program.MainSale;
 import program.POSConfigSetup;
 import program.POSHWSetup;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PublicVar;
 import program.SetupButtonTable;
@@ -59,6 +60,8 @@ public class FloorPlanDialog extends javax.swing.JFrame {
         CONFIG = POSConfigSetup.Bean();
 
         initComponents();
+        
+        super.setTitle(getTitle()+" (DB:"+MySQLConnect.DbName+")");
 
         Value.TableSelected = "";
 
@@ -120,6 +123,7 @@ public class FloorPlanDialog extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem32 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -318,7 +322,7 @@ public class FloorPlanDialog extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tb.png"))); // NOI18N
-        jLabel2.setText("ร้านอาหาร ซอร์ฟโพส สุดแซ่บ");
+        jLabel2.setText("ร้านอาหาร");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -328,7 +332,7 @@ public class FloorPlanDialog extends javax.swing.JFrame {
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 413, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4))
         );
         jPanel3Layout.setVerticalGroup(
@@ -343,8 +347,8 @@ public class FloorPlanDialog extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -418,6 +422,15 @@ public class FloorPlanDialog extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem10);
+
+        jMenuItem32.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jMenuItem32.setText("พิมพ์สำเนาใบกำกับภาษีอย่างย่อ (Copy Bill)");
+        jMenuItem32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem32ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem32);
         jMenu1.add(jSeparator1);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
@@ -871,6 +884,19 @@ public class FloorPlanDialog extends javax.swing.JFrame {
         fd.setVisible(true);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
+    private void jMenuItem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem32ActionPerformed
+        showBillDuplicate();
+    }//GEN-LAST:event_jMenuItem32ActionPerformed
+
+    private void showBillDuplicate() {
+        if (!ChkEJPath()) {
+            return;
+        }
+        
+        CopyBill frm = new CopyBill(null, true);
+        frm.setVisible(true);
+    }
+    
     public static void main(String args[]) {
         new MySQLConnect();
         /* Set the Nimbus look and feel */
@@ -956,6 +982,7 @@ public class FloorPlanDialog extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem30;
     private javax.swing.JMenuItem jMenuItem31;
+    private javax.swing.JMenuItem jMenuItem32;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;

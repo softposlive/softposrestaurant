@@ -5,7 +5,7 @@ import database.MySQLConnect;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PluRec;
 

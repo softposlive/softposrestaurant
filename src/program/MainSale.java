@@ -1,5 +1,6 @@
 package program;
 
+import printReport.PPrint;
 import printReport.PrintSimpleForm;
 import printReport.PrintDriver;
 import com.softpos.floorplan.MTDRep;
@@ -77,6 +78,8 @@ public class MainSale extends javax.swing.JDialog {
     public MainSale(java.awt.Frame parent, boolean modal, String tableNo) {
         super(parent, modal);
         initComponents();
+        
+        BalanceControl.updateProSerTable(tableNo, null);
 
         Value.MemberAlready = false;
         try {
@@ -96,7 +99,7 @@ public class MainSale extends javax.swing.JDialog {
 
         initScreen();
         setupMenu();
-        super.setTitle(super.getTitle() + " (" + Value.USERCODE + ") " + "พนักงาน: " + PublicVar._UserName);
+        super.setTitle(super.getTitle() + " (" + Value.USERCODE + ") เลขที่ใบเสร็จ: "+BillControl.getBillIDCurrent());
         BranchBean branchBean = BranchControl.getData();
         if (branchBean.getLocation_Area().equals("02")) {
             txtShowETD.setText("T");
@@ -474,11 +477,11 @@ public class MainSale extends javax.swing.JDialog {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("ลดรายการ");
+        jLabel3.setText("Discount");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("ลดโปรโมชั่น");
+        jLabel4.setText("Promotion");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -486,7 +489,7 @@ public class MainSale extends javax.swing.JDialog {
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("เพิ่มค่าบริการ");
+        jLabel7.setText("Service");
 
         txtTotalAmount.setEditable(false);
         txtTotalAmount.setBackground(new java.awt.Color(255, 255, 255));
@@ -500,7 +503,7 @@ public class MainSale extends javax.swing.JDialog {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("ยอดรวม");
+        jLabel8.setText("Amount");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -713,7 +716,7 @@ public class MainSale extends javax.swing.JDialog {
         txtShowTime1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtShowTime1.setForeground(new java.awt.Color(255, 255, 0));
         txtShowTime1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtShowTime1.setText("Total Amount");
+        txtShowTime1.setText("Net Total");
         txtShowTime1.setRequestFocusEnabled(false);
         txtShowTime1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
@@ -867,8 +870,7 @@ public class MainSale extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE))
         );
 
         tbpMain.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -1498,8 +1500,6 @@ private void txtTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
         showPaidIn();
     } else if (evt.getKeyCode() == KeyEvent.VK_F9) {
         showPaidOut();
-    } else if (evt.getKeyCode() == KeyEvent.VK_F6) {
-        showBillDuplicate();
     } else if (evt.getKeyCode() == KeyEvent.VK_F7) {
         showRefundBill();
     } else if (evt.getKeyCode() == KeyEvent.VK_F12) {
@@ -1859,7 +1859,7 @@ private void MRepMemberHistory1ActionPerformed(java.awt.event.ActionEvent evt) {
 }//GEN-LAST:event_MRepMemberHistory1ActionPerformed
 
 private void MHeaderBill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MHeaderBill1ActionPerformed
-    if(Value.useprint){
+    if (Value.useprint) {
         PPrint prn = new PPrint();
         prn.printHeaderBill();
     }
@@ -2183,7 +2183,7 @@ private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         mgr.setVisible(true);
 
         //if (mgr.getOK()) {
-            backHistory();
+        backHistory();
         //}
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -3573,7 +3573,8 @@ private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     public void PullTableAndSave() {
         try {
             String UpdateTableFile = "update tablefile "
-                    + "set tonact='N' "
+                    + "set tonact='N',"
+                    + "TPause='Y' "
                     + "where tcode='" + txtTable.getText() + "'";
             MySQLConnect.exeUpdate(UpdateTableFile);
         } catch (Exception e) {
@@ -3690,17 +3691,6 @@ private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         } else {
             txtTable.setText("");
             txtTable.requestFocus();
-        }
-    }
-
-    public void showBillDuplicate() {
-        if (!ChkEJPath()) {
-            return;
-        }
-        if (model.getRowCount() == 0) {
-            CopyBill frm = new CopyBill(null, true);
-            frm.setVisible(true);
-            initScreen();
         }
     }
 
@@ -4120,7 +4110,7 @@ private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private void selectedOptionBill() {
         int row = tblShowBalance.getSelectedRow();
         String chk = tblShowBalance.getValueAt(row, 0).toString();
-        if(chk.equals("")){
+        if (chk.equals("")) {
             return;
         }
         if (row != -1) {

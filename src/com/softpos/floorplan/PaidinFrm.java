@@ -8,7 +8,7 @@ import java.util.Locale;
 import database.MySQLConnect;
 import java.awt.HeadlessException;
 import program.POSHWSetup;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import printReport.PrintDriver;
 import program.PublicVar;

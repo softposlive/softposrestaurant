@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import database.MySQLConnect;
 import java.sql.Statement;
 import program.Jdi_report_SalePLU;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PluRec;
 import soft.virtual.KeyBoardDialog;

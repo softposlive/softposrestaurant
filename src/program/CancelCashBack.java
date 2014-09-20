@@ -52,7 +52,7 @@ public class CancelCashBack extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(table);
 
-        btnOk.setFont(new java.awt.Font("Norasi", 0, 14)); // NOI18N
+        btnOk.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnOk.setText("ตกลง (OK)");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,7 +60,7 @@ public class CancelCashBack extends javax.swing.JDialog {
             }
         });
 
-        btnExit.setFont(new java.awt.Font("Norasi", 0, 14)); // NOI18N
+        btnExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnExit.setText("ออก (Exit)");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

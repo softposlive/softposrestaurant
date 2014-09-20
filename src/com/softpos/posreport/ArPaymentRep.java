@@ -11,7 +11,7 @@ import database.MySQLConnect;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import program.POSHWSetup;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PublicVar;
 import program.Value;

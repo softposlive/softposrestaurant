@@ -2,6 +2,7 @@ package program;
 
 import com.softpos.member.MemberBean;
 import com.softpos.member.MemberControl;
+import com.softpos.vat.VatControl;
 import database.MySQLConnect;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -1086,6 +1087,10 @@ public class BalanceControl {
         //คำนวณค่าบริการ + คำนวณภาษีมูลค่าเพิ่ม
         ServiceControl serviceControl = new ServiceControl();
         serviceControl.updateService(table);
+        
+        //คำนวณ VAT
+        VatControl vatControl = new VatControl(table);
+        vatControl.updateVat();
     }
     
 }

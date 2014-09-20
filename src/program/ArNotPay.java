@@ -1,5 +1,6 @@
 package program;
 
+import printReport.PPrint;
 import database.MySQLConnect;
 import java.awt.Color;
 import java.awt.Font;
@@ -398,10 +399,10 @@ public class ArNotPay extends javax.swing.JDialog {
 
         jMenu1.setText("Function");
         jMenu1.setFocusable(false);
-        jMenu1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenu1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
-        jMenuItem1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jMenuItem1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem1.setText("ประมาลผล ");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -411,7 +412,7 @@ public class ArNotPay extends javax.swing.JDialog {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F10, 0));
-        jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem2.setText("พิมพ์");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -422,7 +423,7 @@ public class ArNotPay extends javax.swing.JDialog {
         jMenu1.add(jSeparator1);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
-        jMenuItem3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jMenuItem3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem3.setText("ออก (Exit)");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

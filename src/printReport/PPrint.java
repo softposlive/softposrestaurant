@@ -1,4 +1,4 @@
-package program;
+package printReport;
 
 import printReport.PrintDriver;
 import gnu.io.CommPortIdentifier;
@@ -21,6 +21,26 @@ import database.MySQLConnect;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import program.BalanceBean;
+import program.BalanceControl;
+import program.BillControl;
+import program.BillNoBean;
+import program.CreditPaymentRec;
+import program.CreditRec;
+import program.FinalcialRec;
+import program.HourlyRec;
+import program.POSConfigSetup;
+import program.POSHWSetup;
+import program.PUtility;
+import program.PluRec;
+import program.PublicVar;
+import program.TSaleBean;
+import program.TableFileBean;
+import program.TableFileControl;
+import program.TextWriter;
+import program.ThaiUtil;
+import program.TranRecord;
+import program.Value;
 import util.MSG;
 
 public class PPrint {
@@ -763,9 +783,9 @@ public class PPrint {
         PrintDriver pd = new PrintDriver();
         String[] strs = t.split("_");
         for (String data : strs) {
-            if(data.indexOf("<font")==-1){
-                pd.addText("<font size=-6>"+data+"</font>");
-            }else{
+            if (data.indexOf("<font") == -1) {
+                pd.addText("<font size=-6>" + data + "</font>");
+            } else {
                 pd.addText(data);
             }
         }

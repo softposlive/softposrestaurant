@@ -7,7 +7,7 @@ import database.MySQLConnect;
 import java.sql.Statement;
 import program.CreditRec;
 import program.FinalcialRec;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.Value;
 

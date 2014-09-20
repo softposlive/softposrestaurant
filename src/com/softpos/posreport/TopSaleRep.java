@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import program.Jdi_dailyReport_Topsale;
 import program.POSHWSetup;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PublicVar;
 import program.Value;

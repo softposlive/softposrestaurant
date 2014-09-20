@@ -35,7 +35,7 @@ public class CheckProductNotEnough extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ตรวจสอบรายการสินค้าที่หมดในวันนี้");
 
-        jLabel1.setFont(new java.awt.Font("Norasi", 1, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("ตรวจสอบรายการสินค้าที่หมดในวันนี้");
 
         table.setModel(new javax.swing.table.DefaultTableModel(
@@ -88,7 +88,7 @@ public class CheckProductNotEnough extends javax.swing.JDialog {
 
         txtPDesc.setFont(new java.awt.Font("Norasi", 0, 14)); // NOI18N
 
-        btnAdd.setFont(new java.awt.Font("Norasi", 1, 14)); // NOI18N
+        btnAdd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAdd.setText("เพิ่ม (Add)");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +101,7 @@ public class CheckProductNotEnough extends javax.swing.JDialog {
             }
         });
 
-        btnDel.setFont(new java.awt.Font("Norasi", 1, 14)); // NOI18N
+        btnDel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnDel.setText("ลบ (Del)");
         btnDel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +156,7 @@ public class CheckProductNotEnough extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        jButton2.setFont(new java.awt.Font("Norasi", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("ออก (Exit)");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

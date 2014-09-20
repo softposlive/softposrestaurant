@@ -1,5 +1,6 @@
 package program;
 
+import printReport.PPrint;
 import com.softpos.posreport.MTDInvoice;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;

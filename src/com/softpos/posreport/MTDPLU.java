@@ -18,7 +18,7 @@ import database.MySQLConnect;
 import java.sql.Statement;
 import program.Jdi_report_MTDSalePLU;
 import program.POSHWSetup;
-import program.PPrint;
+import printReport.PPrint;
 import program.PUtility;
 import program.PluRec;
 import program.PublicVar;

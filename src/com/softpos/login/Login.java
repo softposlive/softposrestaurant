@@ -19,7 +19,7 @@ import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import com.softpos.floorplan.FloorPlanDialog;
-import program.PPrint;
+import printReport.PPrint;
 import program.PublicVar;
 import program.ThaiUtil;
 import program.UserRecord;

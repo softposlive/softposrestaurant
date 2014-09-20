@@ -525,7 +525,7 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="&#xe25;&#xe14;&#xe23;&#xe32;&#xe22;&#xe01;&#xe32;&#xe23;"/>
+                <Property name="text" type="java.lang.String" value="Discount"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
@@ -534,7 +534,7 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="&#xe25;&#xe14;&#xe42;&#xe1b;&#xe23;&#xe42;&#xe21;&#xe0a;&#xe31;&#xe48;&#xe19;"/>
+                <Property name="text" type="java.lang.String" value="Promotion"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
@@ -552,7 +552,7 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe04;&#xe48;&#xe32;&#xe1a;&#xe23;&#xe34;&#xe01;&#xe32;&#xe23;"/>
+                <Property name="text" type="java.lang.String" value="Service"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTotalAmount">
@@ -582,7 +582,7 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="&#xe22;&#xe2d;&#xe14;&#xe23;&#xe27;&#xe21;"/>
+                <Property name="text" type="java.lang.String" value="Amount"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -746,8 +746,7 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="379" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="390" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -909,7 +908,7 @@
                   <Color blue="0" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Total Amount"/>
+                <Property name="text" type="java.lang.String" value="Net Total"/>
                 <Property name="requestFocusEnabled" type="boolean" value="false"/>
                 <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>

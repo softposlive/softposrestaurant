@@ -121,7 +121,7 @@
     <Component class="javax.swing.JButton" name="btnOk">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Norasi" size="14" style="0"/>
+          <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xe15;&#xe01;&#xe25;&#xe07; (OK)"/>
       </Properties>
@@ -132,7 +132,7 @@
     <Component class="javax.swing.JButton" name="btnExit">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Norasi" size="14" style="0"/>
+          <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xe2d;&#xe2d;&#xe01; (Exit)"/>
       </Properties>
